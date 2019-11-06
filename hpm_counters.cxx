@@ -125,7 +125,7 @@ static int handle_stats(int enable)
          for (int i = 0; i < NUM_COUNTERS; i++) {
             long c = element[i];
             if (c) {
-               printf("##  %s = %ld\n", counter_names[i], c);
+               if (enable != WAKEUP) printf("##  %s = %ld\n", counter_names[i], c);
             }
          }
       }
